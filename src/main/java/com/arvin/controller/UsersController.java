@@ -14,6 +14,7 @@ import java.util.Map;
  * @date 2021/1/12
  **/
 @RestController
+@RequestMapping("/consumer")
 public class UsersController {
     @Autowired
     private UsersClient usersClient;

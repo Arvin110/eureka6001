@@ -3,10 +3,7 @@ package com.arvin.client;
 import com.arvin.pojo.CommonResult;
 import com.arvin.pojo.Users;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -19,6 +16,7 @@ import java.util.Map;
 //方法名和请求方式路径参数要一致，
 // 普通参数需要添加@RequestParam注解
 @FeignClient(name = "users-provider")
+@RequestMapping("/provider")
 public interface UsersClient {
     @PostMapping("/login.action")
     public CommonResult login(Users users);
